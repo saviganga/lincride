@@ -30,6 +30,9 @@ class PricingConfiguration(models.Model):
     class Meta:
         ordering = ["-created_at"]
         unique_together = ("demand_level", "traffic_level")
+        indexes = [
+            models.Index(fields=["demand_level", "traffic_level"]),
+        ]
 
     def __str__(self):
         return f"demand level: {self.demand_level} - traffic level: {self.traffic_level}"
