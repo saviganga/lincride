@@ -9,3 +9,8 @@ TRAFFIC_LEVELS = [
     ("normal", "Normal"),
     ("high", "High")
 ]
+
+MULTIPLIERS = {
+    "demand": "1.5",
+    "traffic": "2.0"
+}
