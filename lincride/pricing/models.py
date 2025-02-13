@@ -44,21 +44,21 @@ class PricingConfiguration(models.Model):
         multipliers = pricing_enums.MULTIPLIERS
 
         # calculate cost per km
-        cost_per_km = round((self.cost_per_kilometer * Decimal(distance)), 2)
+        cost_per_km = round((self.cost_per_kilometer * Decimal(distance)), 1)
 
-        trip_quote_price = round((self.base_fare + cost_per_km), 2)
+        trip_quote_price = round((self.base_fare + cost_per_km), 1)
 
         # check demand and traffic levels
         if demand_level.lower() == "peak":
             demand_multiplier_value = Decimal(multipliers.get('demand'))
-            trip_quote_price = round(((trip_quote_price * demand_multiplier_value) + trip_quote_price), 2)
+            trip_quote_price = round(((trip_quote_price * demand_multiplier_value) + trip_quote_price), 1)
         else:
             demand_multiplier_value = Decimal("0")
             trip_quote_price = trip_quote_price
         
         if traffic_level.lower() == 'high':
             traffic_multiplier_value = Decimal(multipliers.get('traffic'))
-            trip_quote_price = round(((trip_quote_price * traffic_multiplier_value) + trip_quote_price), 2)
+            trip_quote_price = round(((trip_quote_price * traffic_multiplier_value) + trip_quote_price), 1)
         else:
             traffic_multiplier_value = Decimal("0")
             trip_quote_price = trip_quote_price
