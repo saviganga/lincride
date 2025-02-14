@@ -26,7 +26,7 @@ git clone git@github.com:saviganga/lincride.git
 2. Set up your `.env` file
 ```bash
 cd lincride/
-cp env.example .env
+cp env.example ./lincride/.env
 ```
 Fill the .env file with your values
 
