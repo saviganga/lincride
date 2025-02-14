@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "31bade88-eaf7-42b8-8662-35fd6f300d29",
+		"name": "pricing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19834967"
+	},
+	"item": [
+		{
+			"name": "Get pricing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/pricing/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pricing",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create pricing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traffic_level\": \"normal\",\n    \"demand_level\": \"peak\",\n    \"base_fare\": \"230\",\n    \"cost_per_kilometer\": \"27\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/pricing/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pricing",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate quote",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/calculate-fare/?distance=10&demand_level=peak&traffic_level=high",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"calculate-fare",
+						""
+					],
+					"query": [
+						{
+							"key": "distance",
+							"value": "10"
+						},
+						{
+							"key": "demand_level",
+							"value": "peak"
+						},
+						{
+							"key": "traffic_level",
+							"value": "high"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
