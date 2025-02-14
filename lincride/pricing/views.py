@@ -67,6 +67,6 @@ class PricingConfigurationViewSet(ModelViewSet):
                 )
         except Exception as e:
             return Response(
-                data=u_responses.error_response(message="Unable to fetch blog posts"),
+                data=u_responses.error_response(message="Unable to fetch pricing configurations"),
                 status=status.HTTP_400_BAD_REQUEST,
             )
