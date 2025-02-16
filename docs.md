@@ -37,8 +37,8 @@ This endpoint allows users to get oricing configurations.
 After the pricing configurations have been set, the user can check trip fares
 
 
-#### 2. Get Pricing Configurations
-This endpoint allows users to get oricing configurations.
+#### 1. Get Trip Quote
+This endpoint allows users to get trip quotes.
 
 - **Endpoint**: `{{BASE_URL}}/api/calculate-fare/?distance=<distance_value>&demand_level=<demand_level>&traffic_level=<traffic_level>`
 - **Method**: GET
